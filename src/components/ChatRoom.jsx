@@ -34,9 +34,19 @@ const ChatRoom = ({ roomName }) => {
         dummy && dummy.current.scrollIntoView({ behavior: 'smooth' });
     }
 
+    function handleResize() {
+        const height = document.documentElement.clientHeight;
+        const main = document.getElementsByClassName('main')[0];
+        (height < 1600) && main.scrollTo({
+            top: 100000,
+        })
+    }
+
+    window.addEventListener("resize", handleResize);
+
     return (
         <>
-            <main>
+            <main className="main">
                 <p className="chat-welcome">Bienvenido a la sala: {roomName}</p>
                 {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} roomName={roomName} />)}
                 <span ref={dummy}></span>

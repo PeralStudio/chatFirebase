@@ -237,3 +237,13 @@ img {
     font-size: 12px;
   }
 }
+
+@media only screen and (max-height: 600px) {
+  main {
+    margin: -5vh 0 10vh;
+  }
+
+  form {
+    height: 18%;
+  }
+}
