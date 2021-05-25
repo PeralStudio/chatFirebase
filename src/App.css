@@ -181,11 +181,17 @@ li {
 p {
   margin-bottom: 12px;
   line-height: 24px;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 25px;
   position: relative;
   color: white;
   text-align: center;
+}
+
+.p-message {
+  font-size: 16px;
+  font-weight: bold;
+  word-break: break-word;
 }
 
 .message {
@@ -195,7 +201,7 @@ p {
 
 .message-received,
 .message-sent {
-  font-size: 11px;
+  font-size: 10px;
   color: rgba(255, 255, 255, 0.459);
 }
 

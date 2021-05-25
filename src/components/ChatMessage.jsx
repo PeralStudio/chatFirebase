@@ -1,5 +1,5 @@
 import React from 'react';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import moment from 'moment';
 
 
@@ -14,9 +14,9 @@ const ChatMessage = (props) => {
     return (<>
         <div className={`message ${messageClass}`}>
             <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt=" " />
-            <p style={{ fontSize: '18px', fontWeight: 'bold', wordBreak: 'break-word' }}>
+            <p className="p-message">
                 {text}
-                <span className={`message message-${messageClass}`}>{moment.unix(createdAt?.seconds).utc().local().format('D/M/Y HH:mm')}</span>
+                <span className={`message message-${messageClass}`}>{createdAt ? moment.unix(createdAt?.seconds).utc().local().format('D/M/Y HH:mm') : <span className={`message message-${messageClass}`}>Cargando...</span>}</span>
             </p>
         </div>
     </>)
