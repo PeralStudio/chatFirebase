@@ -36,21 +36,15 @@ const ChatRoom = ({ roomName }) => {
 
     return (
         <>
-
             <main>
                 <p className="chat-welcome">Bienvenido a la sala: {roomName}</p>
                 {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} roomName={roomName} />)}
-
                 <span ref={dummy}></span>
-
             </main>
 
             <form onSubmit={sendMessage}>
-
                 <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Escribe un mensaje" autoFocus />
-
                 <button type="submit" disabled={!formValue}><i className="fas fa-share"></i></button>
-
             </form>
         </>)
 }

@@ -32,7 +32,10 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  background-color: rgb(11, 11, 12);
+  background-image: url("https://i0.wp.com/wallpapercave.com/wp/wp6988787.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
@@ -60,7 +63,7 @@ main::-webkit-scrollbar-thumb {
   width: fit-content;
   padding: 6px 15px;
   align-self: center;
-  background-color: #4d4572;
+  background-color: #38388f;
 }
 
 form {
@@ -190,18 +193,25 @@ p {
   align-items: center;
 }
 
+.message-received,
+.message-sent {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.459);
+}
+
 .sent {
   flex-direction: row-reverse;
 }
 
 .sent p {
   color: white;
-  background: #0b93f6;
+  background: #023631;
   align-self: flex-end;
 }
+
 .received p {
-  background: #e5e5ea;
-  color: black;
+  background: #1f2d34;
+  color: white;
 }
 
 img {

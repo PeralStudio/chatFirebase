@@ -13,10 +13,10 @@ const ChatMessage = (props) => {
 
     return (<>
         <div className={`message ${messageClass}`}>
-            <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt="Avatar" />
+            <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt=" " />
             <p style={{ fontSize: '18px', fontWeight: 'bold', wordBreak: 'break-word' }}>
                 {text}
-                <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#000000' }} className={`message ${messageClass}`}>{moment.unix(createdAt?.seconds).utc().local().format('D/M/Y HH:mm')}</span>
+                <span className={`message message-${messageClass}`}>{moment.unix(createdAt?.seconds).utc().local().format('D/M/Y HH:mm')}</span>
             </p>
         </div>
     </>)
