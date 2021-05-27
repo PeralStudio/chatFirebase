@@ -32,27 +32,51 @@ const ChatRoom = ({ roomName }) => {
     }, [uid, photoURL, displayName, email])
 
 
-    var myStatusRef = firebase.database().ref("users/" + uid + "/status");
-    var connectedRef = firebase.database().ref(".info/connected");
 
-    connectedRef.on("value", function (snap) {
-        if (snap.val() === true) {
-            var con = myStatusRef;
-            con.onDisconnect().remove();
-            con.set("online");
-            myStatusRef.onDisconnect().set("offline");
-            //o       
-            // myStatusRef.onDisconnect().set(firebase.database.ServerValue.TIMESTAMP);
-        }
-    });
+    // ------------------------------------------------------------------------------------
+    // Presence Firebase Online/Away/Offline
 
-    document.onvisibilitychange = (e) => {
-        if (document.visibilityState === "hidden") {
-            myStatusRef.set('away');
-        } else {
-            myStatusRef.set('online');
-        }
-    };
+    useEffect(() => {
+        const userStatusDatabaseRef = firebase.database().ref('/status/' + uid);
+
+        const isOfflineForDatabase = {
+            state: 'offline',
+            last_changed: firebase.database.ServerValue.TIMESTAMP,
+        };
+
+        const isOnlineForDatabase = {
+            state: 'online',
+            last_changed: firebase.database.ServerValue.TIMESTAMP,
+        };
+
+        const isAwayForDatabase = {
+            state: 'away',
+            last_changed: firebase.database.ServerValue.TIMESTAMP,
+        };
+
+
+        firebase.database().ref('.info/connected').on('value', function (snapshot) {
+
+            console.log(snapshot.val());
+            if (snapshot.val() === false) return;
+
+            userStatusDatabaseRef.onDisconnect().set(isOfflineForDatabase).then(function () {
+                userStatusDatabaseRef.set(isOnlineForDatabase);
+            });
+        });
+
+        document.onvisibilitychange = (e) => {
+            if (document.visibilityState === "hidden") {
+                userStatusDatabaseRef.set(isAwayForDatabase);
+            } else {
+                userStatusDatabaseRef.set(isOnlineForDatabase);
+            }
+        };
+    }, [uid]);
+
+    // ------------------------------------------------------------------------------------
+
+
 
     const sendMessage = async (e) => {
         e.preventDefault();

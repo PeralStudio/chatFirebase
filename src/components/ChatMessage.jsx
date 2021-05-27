@@ -12,7 +12,7 @@ const ChatMessage = (props) => {
 
 
     useEffect(() => {
-        const starCountRef = firebase.database().ref('/users/');
+        const starCountRef = firebase.database().ref('/status/');
         starCountRef.on('value', (snapshot) => {
             const data = snapshot.val();
             setStatus(data);
@@ -27,7 +27,7 @@ const ChatMessage = (props) => {
 
 
     const messageClass = uid === auth.currentUser.uid ? 'sent ' : 'received';
-    const classStatus = status[uid]?.status === 'online' ? "online" : (status[uid]?.status === 'away' ? "away" : "offline");
+    const classStatus = status[uid]?.state === 'online' ? 'online' : status[uid]?.state === 'away' ? 'away' : 'offline';
 
     return (
         <>
