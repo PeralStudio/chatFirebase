@@ -235,12 +235,13 @@ p {
 .sent p {
   color: white;
   background: #023631;
-  align-self: flex-end;
+  border-radius: 10px;
 }
 
 .received p {
   background: #1f2d34;
   color: white;
+  border-radius: 10px;
 }
 
 img {
