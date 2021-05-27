@@ -33,7 +33,7 @@ const ChatMessage = (props) => {
         <>
             <div className={`message ${messageClass} ${classStatus}`}>
                 <div className="name-photo">
-                    <img src={photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt="avatar" />
+                    <img src={photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt=" " />
                     {displayName && <div className="message-name">{displayName}</div>}
                 </div>
                 <p className="p-message">
