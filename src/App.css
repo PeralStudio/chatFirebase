@@ -58,6 +58,13 @@ main::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
 
+.container-signin {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .chat-welcome {
   font-size: 14px;
   width: fit-content;
@@ -180,8 +187,12 @@ button ~ button {
 }
 
 .sign-out {
-  border-radius: 15px;
+  border-radius: 150px;
   padding: 10px 10px;
+}
+
+.sign-out:hover {
+  background-color: rgba(255, 0, 0, 0.39);
 }
 
 ul,
@@ -239,6 +250,15 @@ img {
   margin: 2px 5px;
 }
 
+@media only screen and (max-width: 730px) {
+  .container-signin {
+    background-image: url("https://thumbs.gfycat.com/TheseUnkemptArmyant-max-1mb.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+  }
+}
+
 @media only screen and (max-width: 667px) {
   h1 {
     font-size: 16px;
@@ -251,11 +271,11 @@ img {
 }
 
 @media only screen and (max-height: 600px) {
-  main {
+  /* main {
     margin: -5vh 0 10vh;
-  }
+  } */
 
   form {
-    height: 18%;
+    height: 11vh;
   }
 }
