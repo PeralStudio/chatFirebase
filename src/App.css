@@ -187,7 +187,7 @@ button ~ button {
 }
 
 .sign-out {
-  border-radius: 150px;
+  border-radius: 10px;
   padding: 10px 10px;
 }
 
@@ -222,10 +222,26 @@ p {
   align-items: center;
 }
 
+.message-name {
+  display: flex;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.459);
+  text-align: start;
+  justify-content: center;
+}
+
 .message-received,
 .message-sent {
   font-size: 10px;
   color: rgba(255, 255, 255, 0.459);
+}
+
+.span-text {
+  display: flex;
+}
+
+.name-photo {
+  margin: 5px;
 }
 
 .sent {

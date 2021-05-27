@@ -8,7 +8,7 @@ const ChatMessage = (props) => {
     const auth = firebase.auth();
 
     const [status, setStatus] = useState([]);
-    const { text, uid, photoURL, createdAt } = props.message;
+    const { text, uid, photoURL, createdAt, displayName } = props.message;
 
 
     useEffect(() => {
@@ -26,16 +26,18 @@ const ChatMessage = (props) => {
     }, []);
 
 
-    const messageClass = uid === auth.currentUser.uid ? 'sent ' : 'received';
+    const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
     const classStatus = status[uid]?.state === 'online' ? 'online' : status[uid]?.state === 'away' ? 'away' : 'offline';
 
     return (
         <>
-            {/* < className={`message ${messageClass} ${classStatus}`}> */}
             <div className={`message ${messageClass} ${classStatus}`}>
-                <img src={photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt=" " />
+                <div className="name-photo">
+                    <img src={photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt="avatar" />
+                    {displayName && <div className="message-name">{displayName}</div>}
+                </div>
                 <p className="p-message">
-                    {text}
+                    <span className="span-text">{text}</span>
                     <span className={`message message-${messageClass}`}>{createdAt ? moment.unix(createdAt?.seconds).utc().local().format('D/M/Y HH:mm') : <span className={`message message-${messageClass}`}>Cargando...</span>}</span>
                 </p>
             </div>
