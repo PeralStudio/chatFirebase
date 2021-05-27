@@ -66,6 +66,18 @@ main::-webkit-scrollbar-thumb {
   background-color: #38388f;
 }
 
+.online img {
+  border: 3px solid green;
+}
+
+.away img {
+  border: 3px solid yellow;
+}
+
+.offline img {
+  border: 3px solid red;
+}
+
 form {
   height: 10vh;
   position: fixed;
