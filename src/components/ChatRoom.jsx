@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import { useRef } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import ChatMessage from "./ChatMessage";
+import SignOut from "./SignOut";
 
 require('firebase/database');
 
@@ -57,7 +58,6 @@ const ChatRoom = ({ roomName }) => {
 
         firebase.database().ref('.info/connected').on('value', function (snapshot) {
 
-            console.log(snapshot.val());
             if (snapshot.val() === false) return;
 
             userStatusDatabaseRef.onDisconnect().set(isOfflineForDatabase).then(function () {
@@ -108,6 +108,10 @@ const ChatRoom = ({ roomName }) => {
 
     return (
         <>
+            <header>
+                <h1>Sala: {roomName}</h1>
+                <SignOut />
+            </header>
             <main className="main">
                 <p className="chat-welcome">Bienvenido a la sala: {roomName}</p>
                 {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} roomName={roomName} auth={auth} />)}

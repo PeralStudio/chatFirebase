@@ -33,7 +33,7 @@ const ChatMessage = (props) => {
         <>
             {/* < className={`message ${messageClass} ${classStatus}`}> */}
             <div className={`message ${messageClass} ${classStatus}`}>
-                <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt=" " />
+                <img src={photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt=" " />
                 <p className="p-message">
                     {text}
                     <span className={`message message-${messageClass}`}>{createdAt ? moment.unix(createdAt?.seconds).utc().local().format('D/M/Y HH:mm') : <span className={`message message-${messageClass}`}>Cargando...</span>}</span>
