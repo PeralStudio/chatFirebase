@@ -9,6 +9,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import ChatRoom from './components/ChatRoom';
 
 import SignIn from './components/SignIn';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Users from './components/Users';
 
 firebase.initializeApp({
   ****************
@@ -24,11 +26,16 @@ function App() {
   const roomName = 'Pruebas';
 
   return (
-    <div className="App">
-      <section>
-        {user ? <ChatRoom roomName={roomName} /> : <SignIn />}
-      </section>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path='/users' exact component={Users} />
+        <div className="App">
+          <section>
+            {user ? <ChatRoom roomName={roomName} /> : <SignIn />}
+          </section>
+        </div>
+      </Switch>
+    </BrowserRouter>
   );
 }
 export default App;
