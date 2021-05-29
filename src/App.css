@@ -10,6 +10,12 @@ body {
   margin: 0 auto;
 }
 
+.AppUsers {
+  text-align: center;
+  max-width: 728px;
+  margin: 0 auto;
+}
+
 .App header {
   background-color: #181717;
   height: 10vh;
@@ -38,8 +44,37 @@ body {
   background-size: cover;
 }
 
+.AppUsers section {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 150px;
+  word-break: break-word;
+  align-items: center;
+  background-color: rgb(11, 11, 12);
+  background-image: url("https://i0.wp.com/wallpapercave.com/wp/wp6988787.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.AppUsers header {
+  background-color: #181717;
+  height: 10vh;
+  color: white;
+  position: fixed;
+  width: 100%;
+  max-width: 728px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
 main {
-  height: 80vh;
+  height: 75vh;
   margin: 10vh 0 10vh;
   overflow-y: scroll;
   display: flex;
