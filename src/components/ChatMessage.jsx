@@ -12,8 +12,8 @@ const ChatMessage = (props) => {
 
 
     useEffect(() => {
-        const starCountRef = firebase.database().ref('/status/');
-        starCountRef.on('value', (snapshot) => {
+        const statusRef = firebase.database().ref('/status/');
+        statusRef.on('value', (snapshot) => {
             const data = snapshot.val();
             setStatus(data);
         });

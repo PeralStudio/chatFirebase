@@ -18,7 +18,7 @@ const SignOut = () => {
     }
 
     return auth.currentUser && (
-        <button className="sign-out" onClick={handleClick}>Salir<i style={{ marginLeft: '10px', fontSize: '16px' }} className="fas fa-sign-out-alt"></i></button>
+        <button style={{ fontSize: '12px' }} className="sign-out" onClick={handleClick}>Salir<i style={{ marginLeft: '10px', fontSize: '12px' }} className="fas fa-sign-out-alt"></i></button>
     )
 }
 

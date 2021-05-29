@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import ChatMessage from "./ChatMessage";
 import SignOut from "./SignOut";
+import { NavLink } from "react-router-dom";
 
 require('firebase/database');
 
@@ -41,16 +42,25 @@ const ChatRoom = ({ roomName }) => {
         const userStatusDatabaseRef = firebase.database().ref('/status/' + uid);
 
         const isOfflineForDatabase = {
+            uid,
+            displayName,
+            photoURL,
             state: 'offline',
             last_changed: firebase.database.ServerValue.TIMESTAMP,
         };
 
         const isOnlineForDatabase = {
+            uid,
+            displayName,
+            photoURL,
             state: 'online',
             last_changed: firebase.database.ServerValue.TIMESTAMP,
         };
 
         const isAwayForDatabase = {
+            uid,
+            displayName,
+            photoURL,
             state: 'away',
             last_changed: firebase.database.ServerValue.TIMESTAMP,
         };
@@ -72,7 +82,7 @@ const ChatRoom = ({ roomName }) => {
                 userStatusDatabaseRef.set(isOnlineForDatabase);
             }
         };
-    }, [uid]);
+    }, [uid, displayName, photoURL]);
 
     // ------------------------------------------------------------------------------------
 
@@ -110,14 +120,19 @@ const ChatRoom = ({ roomName }) => {
         <>
             <header>
                 <h1>Sala: {roomName}</h1>
-                <SignOut />
+                <div style={{ justifyContent: 'space-between' }}>
+                    <NavLink to="/users">
+                        <button style={{ fontSize: '12px', marginRight: '10px' }} className="sign-out" >Participantes<i style={{ marginLeft: '10px', fontSize: '12px' }} className="fas fa-users"></i></button>
+                    </NavLink>
+
+                    <SignOut />
+                </div>
             </header>
             <main className="main">
                 <p className="chat-welcome">Bienvenido a la sala: {roomName}</p>
                 {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} roomName={roomName} auth={auth} />)}
                 <span ref={dummy}></span>
             </main>
-
             <form onSubmit={sendMessage}>
                 <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Escribe un mensaje" autoFocus />
                 <button type="submit" disabled={!formValue}><i className="fas fa-share"></i></button>
