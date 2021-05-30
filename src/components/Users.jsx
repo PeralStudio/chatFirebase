@@ -38,7 +38,7 @@ const Users = () => {
                                 <img src={item.photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt=" " />
                                 <div className={`span${item.state}`}></div>
                             </div>
-                            {item.displayName && <p>{item.displayName}</p>}
+                            {item.displayName && <p>{item.displayName[0].toUpperCase() + item.displayName.substring(1)}</p>}
                         </div>
                     ))}
                 </div>
