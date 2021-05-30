@@ -17,7 +17,7 @@ const Users = () => {
             for (var value in data) {
                 users.push(data[value]);
             }
-
+            users.length > 0 && users.sort((a, b) => (a.displayName.toLowerCase() > b.displayName.toLowerCase()) ? 1 : -1)
             setStatusUsers(users);
         });
     }, [])
