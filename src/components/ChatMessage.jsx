@@ -17,9 +17,7 @@ const ChatMessage = (props) => {
             const data = snapshot.val();
             setStatus(data);
         });
-    }, []);
 
-    useEffect(() => {
         //! Mejorar
         const main = document.getElementsByClassName('main')[0];
         main.scrollTo(0, 10000);
@@ -34,6 +32,7 @@ const ChatMessage = (props) => {
             <div className={`message ${messageClass} ${classStatus}`}>
                 <div className="name-photo">
                     <img src={photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt=" " />
+                    <div className={`span ${messageClass}${classStatus}`}></div>
                     {displayName && <div className="message-name">{displayName}</div>}
                 </div>
                 <p className="p-message">

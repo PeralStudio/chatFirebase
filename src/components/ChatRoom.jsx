@@ -122,7 +122,7 @@ const ChatRoom = ({ roomName }) => {
                 <h1>Sala: {roomName}</h1>
                 <div style={{ justifyContent: 'space-between' }}>
                     <NavLink to="/users">
-                        <button style={{ fontSize: '12px', marginRight: '10px' }} className="sign-out" >Participantes<i style={{ marginLeft: '10px', fontSize: '12px' }} className="fas fa-users"></i></button>
+                        <button style={{ fontSize: '12px', marginRight: '10px' }} className="users" >Participantes<i style={{ marginLeft: '10px', fontSize: '12px' }} className="fas fa-users"></i></button>
                     </NavLink>
 
                     <SignOut />

@@ -47,8 +47,9 @@ body {
 .AppUsers section {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  padding-top: 150px;
+  height: 88vh;
+  margin: 9vh 0 0vh;
+  padding-top: 20px;
   word-break: break-word;
   align-items: center;
   background-color: rgb(11, 11, 12);
@@ -108,16 +109,94 @@ main::-webkit-scrollbar-thumb {
   background-color: #38388f;
 }
 
-.online img {
-  border: 3px solid green;
+.sentonline {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #5cb85c;
+  margin-top: -18px;
+  margin-left: 8px;
+  position: relative;
 }
 
-.away img {
-  border: 3px solid yellow;
+.sentaway {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: yellow;
+  margin-top: -18px;
+  margin-left: 8px;
+  position: relative;
 }
 
-.offline img {
-  border: 3px solid red;
+.sentoffline {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: red;
+  margin-top: -18px;
+  margin-left: 8px;
+  position: relative;
+}
+
+.receivedonline {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: green;
+  margin-top: -18px;
+  margin-left: 8px;
+  position: relative;
+}
+
+.receivedaway {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: yellow;
+  margin-top: -18px;
+  margin-left: 8px;
+  position: relative;
+}
+
+.receivedoffline {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: red;
+  margin-top: -18px;
+  margin-left: 8px;
+  position: relative;
+}
+
+.spanonline {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: green;
+  margin-top: -18px;
+  margin-left: 8px;
+  position: relative;
+}
+
+.spanaway {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: yellow;
+  margin-top: -18px;
+  margin-left: 8px;
+  position: relative;
+}
+
+.spanoffline {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: red;
+  margin-top: -18px;
+  margin-left: 8px;
+  position: relative;
 }
 
 form {
@@ -230,6 +309,15 @@ button ~ button {
   background-color: rgba(255, 0, 0, 0.39);
 }
 
+.users {
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.users:hover {
+  background-color: #38388f;
+}
+
 ul,
 li {
   text-align: left;
@@ -287,6 +375,7 @@ p {
   color: white;
   background: #023631;
   border-radius: 10px;
+  margin: 5px;
 }
 
 .received p {

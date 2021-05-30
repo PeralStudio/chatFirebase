@@ -4,10 +4,13 @@ import firebase from 'firebase/app';
 
 const SignOut = () => {
     const auth = firebase.auth();
-    const uid = auth.currentUser.uid;
+    const { uid, photoURL, displayName } = auth.currentUser;
     const userStatusDatabaseRef = firebase.database().ref('/status/' + uid);
 
     const isOfflineForDatabase = {
+        uid,
+        displayName,
+        photoURL,
         state: 'offline',
         last_changed: firebase.database.ServerValue.TIMESTAMP,
     };

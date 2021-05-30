@@ -27,18 +27,21 @@ const Users = () => {
             <header>
                 <h1 style={{ textAlign: 'center' }}>Participantes</h1>
                 <NavLink to="/">
-                    <button style={{ fontSize: '12px' }} className="sign-out" >Volver<i style={{ marginLeft: '10px', fontSize: '12px' }} className="fas fa-chevron-left"></i></button>
+                    <button style={{ fontSize: '12px' }} className="users" >Volver<i style={{ marginLeft: '10px', fontSize: '12px' }} className="fas fa-chevron-left"></i></button>
                 </NavLink>
             </header>
             <section>
-
-                {statusUsers.length > 0 && statusUsers.map(item => (
-                    <div key={item.uid || item.last_changed} className={item.state} style={{ display: 'flex', width: '60%', padding: '10px' }}>
-                        <img src={item.photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt=" " />
-                        {item.displayName && <p>{item.displayName}</p>}
-                        {/* <p style={{ width: 'fit-content' }} className={item.state}>{item.state}</p> */}
-                    </div>
-                ))}
+                <div style={{ marginTop: '20px' }}>
+                    {statusUsers.length > 0 && statusUsers.map(item => (
+                        <div key={item?.uid || item.last_changed} className={item.state} style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+                            <div>
+                                <img src={item.photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt=" " />
+                                <div className={`span${item.state}`}></div>
+                            </div>
+                            {item.displayName && <p>{item.displayName}</p>}
+                        </div>
+                    ))}
+                </div>
             </section>
         </div>
     );
