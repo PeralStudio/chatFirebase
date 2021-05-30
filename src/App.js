@@ -12,8 +12,17 @@ import SignIn from './components/SignIn';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Users from './components/Users';
 
+require('dotenv').config();
+
 firebase.initializeApp({
-  ****************
+  apiKey: process.env.REACT_APP_DB_APIKEY,
+  authDomain: process.env.REACT_APP_DB_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_DB_DATABASEURL,
+  projectId: process.env.REACT_APP_DB_PROJECTID,
+  storageBucket: process.env.REACT_APP_DB_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_DB_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_DB_APPID,
+  measurementId: process.env.REACT_APP_DB_MEASUREMENTID
 })
 
 const auth = firebase.auth();
@@ -28,7 +37,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/users' exact component={Users} />
+        <Route exact path='/users' component={Users} />
         <div className="App">
           <section>
             {user ? <ChatRoom roomName={roomName} /> : <SignIn />}
