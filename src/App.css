@@ -75,7 +75,7 @@ body {
 }
 
 main {
-  height: 75vh;
+  height: 80vh;
   margin: 10vh 0 10vh;
   overflow-y: scroll;
   display: flex;
@@ -110,8 +110,8 @@ main::-webkit-scrollbar-thumb {
 }
 
 .sentonline {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: #5cb85c;
   margin-top: -18px;
@@ -120,8 +120,8 @@ main::-webkit-scrollbar-thumb {
 }
 
 .sentaway {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: yellow;
   margin-top: -18px;
@@ -130,8 +130,8 @@ main::-webkit-scrollbar-thumb {
 }
 
 .sentoffline {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: red;
   margin-top: -18px;
@@ -140,8 +140,8 @@ main::-webkit-scrollbar-thumb {
 }
 
 .receivedonline {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: green;
   margin-top: -18px;
@@ -150,8 +150,8 @@ main::-webkit-scrollbar-thumb {
 }
 
 .receivedaway {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: yellow;
   margin-top: -18px;
@@ -160,8 +160,8 @@ main::-webkit-scrollbar-thumb {
 }
 
 .receivedoffline {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: red;
   margin-top: -18px;
@@ -170,8 +170,8 @@ main::-webkit-scrollbar-thumb {
 }
 
 .spanonline {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: green;
   margin-top: -18px;
@@ -180,8 +180,8 @@ main::-webkit-scrollbar-thumb {
 }
 
 .spanaway {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: yellow;
   margin-top: -18px;
@@ -190,8 +190,8 @@ main::-webkit-scrollbar-thumb {
 }
 
 .spanoffline {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: red;
   margin-top: -18px;
