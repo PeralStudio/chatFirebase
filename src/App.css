@@ -115,7 +115,8 @@ main::-webkit-scrollbar-thumb {
   border-radius: 50%;
   background: #5cb85c;
   margin-top: -18px;
-  margin-left: 8px;
+  margin-left: 35px;
+
   position: relative;
 }
 
@@ -123,9 +124,10 @@ main::-webkit-scrollbar-thumb {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: yellow;
+  background: #ffba01;
   margin-top: -18px;
-  margin-left: 8px;
+  margin-left: 35px;
+
   position: relative;
 }
 
@@ -135,7 +137,7 @@ main::-webkit-scrollbar-thumb {
   border-radius: 50%;
   background: red;
   margin-top: -18px;
-  margin-left: 8px;
+  margin-left: 35px;
   position: relative;
 }
 
@@ -145,7 +147,7 @@ main::-webkit-scrollbar-thumb {
   border-radius: 50%;
   background: green;
   margin-top: -18px;
-  margin-left: 8px;
+  margin-left: 30px;
   position: relative;
 }
 
@@ -153,9 +155,9 @@ main::-webkit-scrollbar-thumb {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: yellow;
+  /* background: white; */
   margin-top: -18px;
-  margin-left: 8px;
+  margin-left: 30px;
   position: relative;
 }
 
@@ -165,7 +167,7 @@ main::-webkit-scrollbar-thumb {
   border-radius: 50%;
   background: red;
   margin-top: -18px;
-  margin-left: 8px;
+  margin-left: 30px;
   position: relative;
 }
 
@@ -175,7 +177,7 @@ main::-webkit-scrollbar-thumb {
   border-radius: 50%;
   background: green;
   margin-top: -18px;
-  margin-left: 8px;
+  margin-left: 30px;
   position: relative;
 }
 
@@ -183,9 +185,8 @@ main::-webkit-scrollbar-thumb {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: yellow;
   margin-top: -18px;
-  margin-left: 8px;
+  margin-left: 30px;
   position: relative;
 }
 
@@ -195,7 +196,7 @@ main::-webkit-scrollbar-thumb {
   border-radius: 50%;
   background: red;
   margin-top: -18px;
-  margin-left: 8px;
+  margin-left: 30px;
   position: relative;
 }
 

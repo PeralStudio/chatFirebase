@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import firebase from 'firebase/app';
 import moment from 'moment';
+import { presenceAway, presenceOffline, presenceOnline } from '../const/globalConst';
 
 
 const ChatMessage = (props) => {
@@ -26,13 +27,14 @@ const ChatMessage = (props) => {
 
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
     const classStatus = status[uid]?.state === 'online' ? 'online' : status[uid]?.state === 'away' ? 'away' : 'offline';
+    const iconStatus = classStatus === 'online' ? presenceOnline : classStatus === 'away' ? presenceAway : presenceOffline;
 
     return (
         <>
             <div className={`message ${messageClass} ${classStatus}`}>
                 <div className="name-photo">
                     <img src={photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt=" " />
-                    <div className={`span ${messageClass}${classStatus}`}></div>
+                    <div className={`span ${messageClass}${classStatus}`}>{iconStatus}</div>
                     {displayName && <div className="message-name">{displayName}</div>}
                 </div>
                 <p className="p-message">
