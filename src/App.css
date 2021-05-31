@@ -147,7 +147,7 @@ main::-webkit-scrollbar-thumb {
   border-radius: 50%;
   background: green;
   margin-top: -18px;
-  margin-left: 30px;
+  margin-left: 35px;
   position: relative;
 }
 
@@ -155,9 +155,8 @@ main::-webkit-scrollbar-thumb {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  /* background: white; */
   margin-top: -18px;
-  margin-left: 30px;
+  margin-left: 35px;
   position: relative;
 }
 
@@ -167,7 +166,7 @@ main::-webkit-scrollbar-thumb {
   border-radius: 50%;
   background: red;
   margin-top: -18px;
-  margin-left: 30px;
+  margin-left: 35px;
   position: relative;
 }
 
@@ -329,7 +328,7 @@ li {
 p {
   margin-bottom: 12px;
   line-height: 24px;
-  padding: 8px 20px 0px 20px;
+  padding: 8px 15px 0px 20px;
   border-radius: 25px;
   position: relative;
   color: white;
@@ -367,6 +366,7 @@ p {
 
 .name-photo {
   margin: 5px;
+  min-width: 60px;
 }
 
 .sent {

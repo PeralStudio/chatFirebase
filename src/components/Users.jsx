@@ -34,7 +34,9 @@ const Users = () => {
             <section>
                 <div style={{ marginTop: '20px' }}>
                     {statusUsers.length > 0 && statusUsers.map(item => (
-                        <div key={item?.uid || item.last_changed} className={item.state} style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+                        <div key={item?.uid || item.last_changed} className={item.state} style={{
+                            display: 'flex', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: '#1F2D34', padding: '5px', marginBottom: '10px', borderRadius: '5px'
+                        }}>
 
                             <div>
                                 <img src={item.photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt=" " />
