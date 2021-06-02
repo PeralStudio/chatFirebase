@@ -37,7 +37,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: rgb(11, 11, 12);
   background-image: url("https://i0.wp.com/wallpapercave.com/wp/wp6988787.png");
   background-repeat: no-repeat;
@@ -210,8 +210,9 @@ form {
   font-size: 1.5rem;
 }
 
-form button {
+form button[type="submit"] {
   background-color: rgb(56, 56, 143);
+  border-right: 2px solid #3a3a3a;
 }
 
 input {
@@ -297,9 +298,9 @@ button:disabled {
   font-family: "Roboto", arial, sans-serif;
 }
 
-button ~ button {
+/* button ~ button {
   margin-left: 20px;
-}
+} */
 
 .sign-out {
   border-radius: 10px;
@@ -391,6 +392,22 @@ img {
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
+}
+
+.emoji-mart {
+  width: 338px;
+  position: absolute !important;
+  bottom: 100px !important;
+  left: 10px;
+}
+
+.ma4 span {
+  display: flex;
+  justify-content: center;
+}
+
+.ma4 {
+  width: 40px;
 }
 
 @media only screen and (max-width: 730px) {
