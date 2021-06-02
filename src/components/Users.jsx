@@ -34,17 +34,14 @@ const Users = () => {
             <section>
                 <div style={{ marginTop: '20px' }}>
                     {statusUsers.length > 0 && statusUsers.map(item => (
-                        <div key={item?.uid || item.last_changed} className={item.state} style={{
-                            display: 'flex', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: '#1F2D34', padding: '5px', marginBottom: '10px', borderRadius: '5px'
-                        }}>
-
+                        <div key={item?.uid || item.last_changed} className={item.state} style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: '#1F2D34', padding: '5px', marginBottom: '10px', borderRadius: '5px' }}>
                             <div>
                                 <img src={item.photoURL || 'https://api-private.atlassian.com/users/4ebf62c94a29a704ec2a86244dcf5072/avatar'} alt=" " />
                                 <div className={`span${item.state}`}>
                                     {item.state === 'online' ? presenceOnline : item.state === 'away' ? presenceAway : presenceOffline}
                                 </div>
                             </div>
-                            {item.displayName && <p>{item.displayName[0].toUpperCase() + item.displayName.substring(1)}</p>}
+                            {item.displayName && <p>{`${item.displayName.split([' '][0])[0]}  ${item.displayName.split([' '][0])[1]}`}</p>}
                         </div>
                     ))}
                 </div>

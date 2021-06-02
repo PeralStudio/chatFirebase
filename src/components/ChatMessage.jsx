@@ -11,7 +11,7 @@ const ChatMessage = (props) => {
     const [status, setStatus] = useState([]);
     const { text, uid, photoURL, createdAt, displayName } = props.message;
 
-    let namePhoto = displayName.split([' '][0]);
+    const namePhoto = displayName.split([' '][0]);
 
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
     const classStatus = status[uid]?.state === 'online' ? 'online' : status[uid]?.state === 'away' ? 'away' : 'offline';
