@@ -6,6 +6,10 @@ import ChatMessage from "./ChatMessage";
 import SignOut from "./SignOut";
 import { NavLink } from "react-router-dom";
 
+import { Picker } from 'emoji-mart-awesome';
+import data from 'emoji-mart-awesome/data/google.json'
+import 'emoji-mart-awesome/css/emoji-mart.css';
+
 require('firebase/database');
 
 
@@ -21,7 +25,9 @@ const ChatRoom = ({ roomName }) => {
     const query = messagesRef.orderBy('createdAt');
     const [messages] = useCollectionData(query, { idField: 'id' });
 
-    const [formValue, setFormValue] = useState('');
+    // Emoji Picker
+    const [emojiPickerState, SetEmojiPicker] = useState(false);
+    const [message, setMessage] = useState("");
 
 
     useEffect(() => {
@@ -94,7 +100,7 @@ const ChatRoom = ({ roomName }) => {
         const { uid, photoURL, displayName, email } = auth.currentUser;
 
         await messagesRef.add({
-            text: formValue,
+            text: message,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             uid,
             photoURL,
@@ -102,7 +108,8 @@ const ChatRoom = ({ roomName }) => {
             email
         })
 
-        setFormValue('');
+        setMessage('');
+        SetEmojiPicker(false);
         dummy && dummy.current.scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -115,6 +122,32 @@ const ChatRoom = ({ roomName }) => {
     }
 
     window.addEventListener("resize", handleResize);
+
+    // ------------------------------------------------------------------------------------
+    // Emoji Picker
+
+    let emojiPicker;
+    if (emojiPickerState) {
+        emojiPicker = (
+            <Picker
+                // title="Elige un emoji"
+                emoji=""
+                onSelect={emoji => setMessage(message + emoji.native)}
+                set="google"
+                showPreview={false}
+                showSkinTones={false}
+                data={data}
+                exclude={['flags']}
+            />
+        );
+    }
+
+    const triggerPicker = (event) => {
+        event.preventDefault();
+        SetEmojiPicker(!emojiPickerState);
+    }
+
+    // ------------------------------------------------------------------------------------
 
     return (
         <>
@@ -134,8 +167,23 @@ const ChatRoom = ({ roomName }) => {
                 <span ref={dummy}></span>
             </main>
             <form onSubmit={sendMessage}>
-                <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Escribe un mensaje" autoFocus />
-                <button type="submit" disabled={!formValue}><i className="fas fa-share"></i></button>
+                <input
+                    value={message}
+                    onChange={e => setMessage(e.target.value)}
+                    placeholder="Escribe un mensaje" autoFocus
+                />
+                <button
+                    type="submit"
+                    disabled={!message}>
+                    <i className="fas fa-share"></i>
+                </button>
+                {emojiPicker}
+                <button
+                    className="ma4 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+                    onClick={triggerPicker}
+                >
+                    <span className="span-emoji" role="img" aria-label="">😁</span>
+                </button>
             </form>
         </>)
 }
