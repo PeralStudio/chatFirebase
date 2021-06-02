@@ -363,6 +363,7 @@ p {
 
 .span-text {
   display: flex;
+  text-align: justify;
 }
 
 .name-photo {
@@ -427,6 +428,10 @@ img {
 
   .chat-welcome {
     font-size: 12px;
+  }
+
+  input {
+    font-size: 1.2rem;
   }
 }
 
