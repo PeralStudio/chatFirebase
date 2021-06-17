@@ -170,7 +170,7 @@ const ChatRoom = ({ roomName }) => {
                 <input
                     value={message}
                     onChange={e => setMessage(e.target.value)}
-                    placeholder="Escribe un mensaje" autoFocus
+                    placeholder="Escribe un mensaje"
                 />
                 <button
                     type="submit"
